@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Produto</title>
+</head>
+<body>
+<div layout:fragment="conteudo">
+    <h1>Cadastro de Produtos</h1>
+    <form method="post" action="/produtos">
+
+        <input type="hidden" name="_method" value="put" th:if="${filme != null}">
+        <input type="hidden" name="id" th:value="${filme?.id}">
+        <div>
+            <label for="nome">Nome:</label>
+            <input id="nome" name="nome">
+        </div>
+
+        <div>
+            <label for="quantidade">Quantidade:</label>
+            <input id="quantidade" name="quantidade">
+        </div>
+
+
+        <div>
+            <label for="preco">Preço:</label>
+            <input id="preco" name="preco">
+        </div>
+
+
+        <input type="submit" value="Cadastrar">
+    </form>
+    </div>
+</body>
+</html>
